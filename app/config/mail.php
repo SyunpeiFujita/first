@@ -28,7 +28,8 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.mailgun.org',
+	'host' => 'smtp.gmail.com',
+// 	'host' => 'smtp.mailgun.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +42,8 @@ return array(
 	|
 	*/
 
-	'port' => 587,
+	'port' => 465,
+// 	'port' => 587,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +56,8 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'nakada@winroad.info', 'name' => 'ふじーぱみゅぱみゅ'),
+// 	'from' => array('address' => null, 'name' => null),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -67,7 +70,8 @@ return array(
 	|
 	*/
 
-	'encryption' => 'tls',
+	'encryption' => 'ssl',
+// 	'encryption' => 'tls',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +84,8 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'next.s.bdf@gmail.com',
+// 	'username' => null,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +98,8 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'syun0322',
+// 	'password' => null,
 
 	/*
 	|--------------------------------------------------------------------------
