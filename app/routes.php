@@ -5,9 +5,13 @@ use Symfony\Component\HttpKernel\Tests\controller_func;
  */
 
 Route::get ( '/', function () {
-	echo "WANTER<br>";
-	return "最高かよ";
+// 	echo "WANTER<br>";
+// 	return "最高かよ";
 	// return View::make('hello');
+	
+	
+	$data = User::all();
+	return var_dump($data);
 } );
 
 // //フィルターを登録する
@@ -135,8 +139,12 @@ Route::post ( 'login', function () {
 	$data ['users'] = User::orderBy ( 'created_at', 'desc' )->get ();
 	$view = View::make ( 'user.index', $data );
 	Log::info ( "getIndex():end" );
-	return $view;
-	// return View::make('user.index');
+// 	return $view;
+
+	
+	
+// 	return Redirect::action('HomeController');
+	return View::make('user.index');
 } );
 
 /**
@@ -145,20 +153,8 @@ Route::post ( 'login', function () {
  * ************************
  */
 Route::get ( 'logout', function () {
+	Log::info("logout::start");
 	Auth::logout ();
+	Log::info("logout::end");
 	return Redirect::back ();
-} );
-
-/**
- * ***********************
- * メール送信処理
- * ************************
- */
-
-Route::get ( 'email', function () {
-	$data ['name'] = '名無しの権兵衛';
-// 	Mail::send ( 'emails.test', $data, function ($m) {
-// 		$m->to ( 'nakada@winroad.com', 'Nakada' )->subject ( 'Welcome!' );
-// 	} );
-	return 'メールを送信しました。';
 } );

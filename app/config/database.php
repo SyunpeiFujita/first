@@ -56,6 +56,8 @@ return array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
 			'database'  => 'laravel',
+// 			'username'  => 'root',
+// 			'password'  => '',
 			'username'  => 'navi',
 			'password'  => 'navi',
 			'charset'   => 'utf8',
