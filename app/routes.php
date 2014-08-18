@@ -132,7 +132,7 @@ Route::post ( 'login', function () {
 	// TOPページへ
 	Log::info ( "ログイン成功" );
 	
-	return View::make('content.main');
+	return View::make('main');
 	
 // 	// コントローラーを叩けないため処理をコピペ
 // 	$data ['users'] = User::orderBy ( 'created_at', 'desc' )->get ();
