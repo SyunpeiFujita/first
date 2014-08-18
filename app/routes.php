@@ -5,13 +5,12 @@ use Symfony\Component\HttpKernel\Tests\controller_func;
  */
 
 Route::get ( '/', function () {
-// 	echo "WANTER<br>";
-// 	return "最高かよ";
+	// echo "WANTER<br>";
+	// return "最高かよ";
 	// return View::make('hello');
 	
-	
-	$data = User::all();
-	return var_dump($data);
+	$data = User::all ();
+	return var_dump ( $data );
 } );
 
 // //フィルターを登録する
@@ -41,23 +40,20 @@ Route::get ( 'protect2', array (
 		} 
 ) );
 
-// Route::get('login', function()
-// {
-// return View::make('login');
-// });
+// Route::get ( 'login', function () {
+// 	return View::make ( 'login' );
+// } );
 
-// Route::post('login', function()
-// {
-// var_dump("login");
-// // バリデーション省略
-// if (Auth::attempt(Input::only('username', 'password')))
-// {
-// var_dump("中");
-// return Redirect::intended('/');
-// }
-// var_dump("外");
-// //return Redirect::back()->withInput();
-// });
+// Route::post ( 'login', function () {
+// 	var_dump ( "login" );
+// 	// バリデーション省略
+// 	if (Auth::attempt ( Input::only ( 'username', 'password' ) )) {
+// 		var_dump ( "中" );
+// 		return Redirect::intended ( '/' );
+// 	}
+// 	var_dump ( "外" );
+// 	// return Redirect::back()->withInput();
+// } );
 
 Route::get ( 'logout', function () {
 	Auth::logout ();
@@ -104,6 +100,7 @@ Route::get ( 'login', array (
  */
 Route::post ( 'login', function () {
 	
+	
 	// 入力データの取得
 	$inputs = Input::only ( array (
 			'username',
@@ -135,16 +132,15 @@ Route::post ( 'login', function () {
 	// TOPページへ
 	Log::info ( "ログイン成功" );
 	
-	// コントローラーを叩けないため処理をコピペ
-	$data ['users'] = User::orderBy ( 'created_at', 'desc' )->get ();
-	$view = View::make ( 'user.index', $data );
-	Log::info ( "getIndex():end" );
-// 	return $view;
-
+	return View::make('content.main');
 	
+// 	// コントローラーを叩けないため処理をコピペ
+// 	$data ['users'] = User::orderBy ( 'created_at', 'desc' )->get ();
+// 	$view = View::make ( 'user.index', $data );
+// 	Log::info ( "getIndex():end" );
+// 	return $view;
 	
 // 	return Redirect::action('HomeController');
-	return View::make('user.index');
 } );
 
 /**
@@ -153,8 +149,8 @@ Route::post ( 'login', function () {
  * ************************
  */
 Route::get ( 'logout', function () {
-	Log::info("logout::start");
+	Log::info ( "logout::start" );
 	Auth::logout ();
-	Log::info("logout::end");
+	Log::info ( "logout::end" );
 	return Redirect::back ();
 } );
