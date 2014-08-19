@@ -6,7 +6,7 @@
 
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta http-equiv="content-script-type" content="text/javascript" />
+	<meta http-equiv="c	ntent-script-type" content="text/javascript" />
 	<meta http-equiv="content-style-type" content="text/css" />
 
 	<!-- meta -->
@@ -30,5 +30,5 @@
 	<!-- favicon -->
 	<link rel="shortcut icon" href="{{{asset('/img/favicon.ico')}}}" />
 	<link rel="icon" type="image/gif" href="{{{asset('/img/favicon2.gif')}}}" />
-
+	<h1>ようこそ {{{ $loginUser }}} さん</h1>
 @stop

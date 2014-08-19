@@ -82,6 +82,12 @@ Route::get ( 'create/user/tables', function () {
 
 Route::controller ( 'user', 'UserController' );
 
+// Route::get( 'main', array('uses'=>'HomeController', 'as'=>'main'));
+Route::controller( 'main', 'HomeController');
+
+// Route::get('home',array('before'=>'login',
+// 'uses'=>'HomeController'));
+
 /**
  * ********************
  * ログインページの表示
@@ -90,6 +96,7 @@ Route::controller ( 'user', 'UserController' );
 Route::get ( 'login', array (
 		'as' => 'login',
 		function () {
+			Log::info("ログインページの表示");
 			return View::make ( 'login' );
 		} 
 ) );
@@ -132,15 +139,24 @@ Route::post ( 'login', function () {
 	// TOPページへ
 	Log::info ( "ログイン成功" );
 	
-	return View::make('main');
+	$data['loginUser'] = Input::get('username');
+	$loginUser = Input::get('username');
+	Log::info("ログインユーザーは".$data['loginUser']);
+
+// 	return Redirect::action('homeLogin');
+	
+// 	Route::controller( 'home', 'HomeController');
+// 	return View::make('home', $data);
 	
 // 	// コントローラーを叩けないため処理をコピペ
 // 	$data ['users'] = User::orderBy ( 'created_at', 'desc' )->get ();
 // 	$view = View::make ( 'user.index', $data );
 // 	Log::info ( "getIndex():end" );
 // 	return $view;
-	
-// 	return Redirect::action('HomeController');
+	Session::put('loginUser', $loginUser);
+	//mainを呼び出してコントローラーに制御を渡す
+// 	return Redirect::To('main?loginUser='.$data['loginUser']);
+	return Redirect::To('main');
 } );
 
 /**
@@ -151,6 +167,7 @@ Route::post ( 'login', function () {
 Route::get ( 'logout', function () {
 	Log::info ( "logout::start" );
 	Auth::logout ();
+	Session::forget("loginUser"); // セッションのログインユーザー名をクリア
 	Log::info ( "logout::end" );
 	return Redirect::back ();
 } );

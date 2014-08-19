@@ -1,4 +1,3 @@
-@section('aaa')
 
 
 <title>Web家庭の医学 | 病気や症状の詳しいWeb解説書</title>
@@ -16,10 +15,10 @@
 
 	<ul id="nav-section">
 		<li id="byoki"><a title="" href="{{ URL::to('main') }}">病気の知識</a></li>
-		<li id="shojo"><a title="" href="bu1/01_shojo.html">症状とセルフケア</a></li>
-		<li id="kyukyu"><a title="" href="bu1/01_kyukyu.html">救命処置と応急手当</a></li>
-		<li id="seikatsu"><a title="" href="bu3/01_seikatsu.html">健康な生活のために</a></li>
-		<li id="ishi"><a title="" href="bu1/01_ishi.html">医師の選び方・かかり方</a></li>
+		<li id="shojo"><a title="" href="{{ URL::to('main/shojo') }}">症状とセルフケア</a></li>
+		<li id="kyukyu"><a title="" href="{{ URL::to('main/kyukyu') }}">救命処置と応急手当</a></li>
+		<li id="seikatsu"><a title="" href="{{ URL::to('main/seikatsu') }}">健康な生活のために</a></li>
+		<li id="ishi"><a title="" href="{{ URL::to('main/ishi') }}">医師の選び方・かかり方</a></li>
 	</ul>
 	<ol id="bread-crumb">
 		<li><a class="active" title="" href="{{ URL::to('/') }}">ホーム</a></li>
@@ -38,4 +37,3 @@
 		</div>
 	</div>
 </div>
-@stop
