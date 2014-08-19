@@ -25,6 +25,14 @@ class HomeController extends BaseController {
 		Log::info("HomeController::getMain::end");
 		return View::make('main');
 	}
+	//病気の知識
+	public function getByoki()
+	{
+		Log::info("HomeController::getByoki::start");
+		$data['loginUser'] = Session::get('loginUser');
+		Log::info("HomeController::getByoki::end");
+		return View::make('byoki', $data);
+	}
 	//症状とセルフケア
 	public function getShojo()
 	{

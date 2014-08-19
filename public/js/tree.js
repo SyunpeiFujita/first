@@ -1,5 +1,4 @@
 function Display(id, honmon){
-	
 	if(document.all || document.getElementById){	//IE4,N6以降
 		if (id) {
 			if(document.all){

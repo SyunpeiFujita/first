@@ -14,7 +14,7 @@
 	</ul>
 
 	<ul id="nav-section">
-		<li id="byoki"><a title="" href="{{ URL::to('main') }}">病気の知識</a></li>
+		<li id="byoki"><a title="" href="{{ URL::to('main/byoki') }}">病気の知識</a></li>
 		<li id="shojo"><a title="" href="{{ URL::to('main/shojo') }}">症状とセルフケア</a></li>
 		<li id="kyukyu"><a title="" href="{{ URL::to('main/kyukyu') }}">救命処置と応急手当</a></li>
 		<li id="seikatsu"><a title="" href="{{ URL::to('main/seikatsu') }}">健康な生活のために</a></li>
