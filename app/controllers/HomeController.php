@@ -4,8 +4,6 @@ class HomeController extends BaseController {
 	public function __construct()
 	{
 		Log::info("HomeController::コンストラクタ::start");
-		
-		
 		Log::info("HomeController::コンストラクタ::end");
 	}
  	//トップページ
@@ -29,7 +27,17 @@ class HomeController extends BaseController {
 	public function getByoki()
 	{
 		Log::info("HomeController::getByoki::start");
-		$data['loginUser'] = Session::get('loginUser');
+		//ByokiMenusから値を取得
+		$titleMenus = ByokiMenu::all();
+		
+		//displaysから値を取得
+		$displays = Display::all();
+		
+		//Viewに渡す値を詰め込む
+		$data['loginUser'] = Session::get('loginUser'); 
+		$data['titleMenus'] = $titleMenus;
+		$data['displays'] = $displays;
+		
 		Log::info("HomeController::getByoki::end");
 		return View::make('byoki', $data);
 	}

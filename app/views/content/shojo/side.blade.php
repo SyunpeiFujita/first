@@ -25,22 +25,12 @@ document.write(header);
 				echo '<a title=\"\" href="javascript:onclick=Display(\''. $titleMenu->display .'\',0)">';
 				echo $titleMenu->menu;
 				echo '</a>';
+				
 				echo '<ul id="'. $titleMenu->display .'" style="display:none">';
-				
-				Log::info($titleMenu->menu.":".$titleMenu->display);
-				
-				//ツリー生成
-				foreach ($displays as $display)
-				{
-					Log::info($display->display);
-					if($display->display == $titleMenu->display)
-					{
-						echo '<li>'. $display->submenu .'</li>';
-					}
-					
-				}
-				
-				
+				echo '<li>症状とは</li>';
+				echo '<li>日本の医療システムとプライマリケア</li>';
+				echo '<li class="column_t">インフォームドコンセント</li>';
+				echo '<li class="column_t">電子カルテ</li>';
 				echo '</ul>';
 				
 				
