@@ -1,25 +1,18 @@
-<body id="byoki">
+{{ $header }}
 
-<div id="header">
-<!--▼ヘッダーボタン-->
-<script type="text/JavaScript">
-<!--
-document.write(header);
-//-->
-</script>
-<!--▲ヘッダーボタン-->
-	<ol id="bread-crumb">
-		<li><a title="" href="http://www.egao-library.net:80/akahon/login.php?f=index.html">ホーム</a></li>
-				<li><a class="active" title="" href="http://www.egao-library.net:80/akahon/login.php?f=bu2/01_byoki.html">症状とセルフケア</a></li>
-
-	</ol>
-</div>
 
 <!-- ▼サイドバー▼ -->
 <div id="content">
 	<ul id="nav-main">		
+	------------------▼▼▼▼以下DB値▼▼▼▼------------------
+	{{ $sidebar }}
+	
+	
+	
 		------------------▼▼▼▼以下HTML▼▼▼▼------------------
 		<!-- <ul id="nav-main">  -->
+		
+		------------------▼▼▼▼以下DB値に変換▼▼▼▼------------------
 		<li><a title="" href="javascript:onclick=Display('SH4011001',0)">呼吸器系の病気</a>
 			<ul id="SH4011001" style="display:none">
 				<li><a title="" href="javascript:onclick=Display('ST4011001',0)">気管・肺・胸膜・横隔膜の病気</a>

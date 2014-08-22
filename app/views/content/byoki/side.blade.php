@@ -27,12 +27,9 @@ document.write(header);
 				echo '</a>';
 				echo '<ul id="'. $titleMenu->display .'" style="display:none">';
 				
-				Log::info($titleMenu->menu.":".$titleMenu->display);
-				
 				//ツリー生成
 				foreach ($displays as $display)
 				{
-					Log::info($display->display);
 					if($display->display == $titleMenu->display)
 					{
 						echo '<li>'. $display->submenu .'</li>';
