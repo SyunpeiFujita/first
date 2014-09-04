@@ -1,6 +1,8 @@
-	<script language="javascript" type="text/javascript" src="{{{asset('/js/tree.js')}}}"></script>
+<!-- 	<script language="javascript" type="text/javascript" src="{{{asset('/js/tree.js')}}}"></script> -->
 
-	<script src="{{{asset('/js/prototype.js')}}}" type="text/javascript"></script>
+<!-- ▼▼▼ここがあるとajaxが動かないためコメントアウト▼▼▼ -->
+<!-- 	<script src="{{{asset('/js/prototype.js')}}}" type="text/javascript"></script> -->
+<!-- ▲▲▲▲▲▲▲ -->
 	<script src="{{{asset('/js/effects.js')}}}" type="text/javascript"></script>
 	<script src="{{{asset('/js/window.js')}}}" type="text/javascript"></script>
 	<script src="{{{asset('/js/manage.js')}}}" type="text/javascript"></script>

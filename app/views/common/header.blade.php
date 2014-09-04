@@ -30,5 +30,9 @@
 	<!-- favicon -->
 	<link rel="shortcut icon" href="{{{asset('/img/favicon.ico')}}}" />
 	<link rel="icon" type="image/gif" href="{{{asset('/img/favicon2.gif')}}}" />
-	<h1>ようこそ {{{ $loginUser }}} さん</h1>
+	
+	<!-- 追加 -->
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script src="{{{asset('/js/ajax.js')}}}"></script>
+	<!-- 	<h1>ようこそ {{{ $loginUser }}} さん</h1>   -->
 @stop

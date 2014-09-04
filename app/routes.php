@@ -13,6 +13,10 @@ Route::get ( '/', function () {
 	return var_dump ( $data );
 } );
 
+Route::get('ajax', function() {
+	Log::info("ajaxxxxx");
+});
+
 // //フィルターを登録する
 // Route::filter('filter',function(){
 // if ("1" == "1") {
@@ -81,6 +85,7 @@ Route::get ( 'create/user/tables', function () {
 } );
 
 Route::controller ( 'user', 'UserController' );
+
 
 // Route::get( 'main', array('uses'=>'HomeController', 'as'=>'main'));
 Route::controller( 'main', 'HomeController');

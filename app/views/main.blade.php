@@ -1,5 +1,5 @@
 @extends('common.layout')
-@include('common.header')
+@include('content.shojo.header')
 @section('content')
 
 @include('content.header')

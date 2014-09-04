@@ -10,20 +10,25 @@ class UserController extends BaseController {
 	// コンストラクター
 	public function __construct() {
 		Log::info ( "コンストラクタstart" );
-		$this->beforeFilter ( 'auth' );
-		$this->beforeFilter ( 'csrf', array (
-				'on' => 'post' 
-		) );
+// 		$this->beforeFilter ( 'auth' );
+// 		$this->beforeFilter ( 'csrf', array (
+// 				'on' => 'post' 
+// 		) );
 		Log::info ( "コンストラクタend" );
 	}
 	// トップページ
 	public function getIndex() {
 		Log::info ( "getIndex():start" );
-		// EloquentORMでデータの取得
-		$data ['users'] = User::orderBy ( 'created_at', 'desc' )->get ();
-		$view = View::make ( 'user.index', $data );
+		$view = View::make ( 'test.index');
+// 		// EloquentORMでデータの取得
+// 		$data ['users'] = User::orderBy ( 'created_at', 'desc' )->get ();
+// 		$view = View::make ( 'user.index', $data );
 		Log::info ( "getIndex():end" );
 		return $view;
+	}
+	
+	public function getAjax() {
+		Log::info("Ajax通過");
 	}
 	// createビューファイルの表示
 	public function getCreate() {
